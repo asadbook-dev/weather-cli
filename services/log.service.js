@@ -1,26 +1,21 @@
-import chalk from "chalk"
-import dedent from "dedent-js"
+import chalk from "chalk";
+import dedent from "dedent-js";
 
+const printError = (error) => {
+  console.log(chalk.bgRed("Error") + " " + error);
+};
 
-const printError = error => {
-    console.log(chalk.bgRed('Error') + ' ' + error)
-}
+const printSuccess = (message) => {
+  console.log(chalk.bgGreen("Success") + " " + message);
+};
 
-const printSuccess = message  => {
-    console.log(chalk.bgGreen('Success') + ' ' + message)
-}
-
-const printHelp = help => {
-    console.log( dedent `
-        ${chalk.bgCyan('Help')}
+const printHelp = (help) => {
+  console.log(dedent`
+        ${chalk.bgCyan("Help")}
         -s [CITY] for install city
         -h for help
         -t [API_KEY] for saving token
-    `)
-}
+    `);
+};
 
-export {
-    printError,
-    printSuccess,
-    printHelp
-}
+export { printError, printSuccess, printHelp };
